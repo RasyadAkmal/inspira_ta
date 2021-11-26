@@ -1,0 +1,39 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.search-name{
+  color: black;
+}
+
+.search-input{
+  text-align: center;
+  padding: 10px;
+}
+
+.search-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.search-container img {
+  width: 3%;
+  height: 3%;
+  margin-right: 10px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  margin-top: 50px;
+  max-width: 300px;
+  background-color: #850000;
+}
