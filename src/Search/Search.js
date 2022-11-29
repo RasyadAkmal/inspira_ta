@@ -24,25 +24,29 @@ const Search = () => {
   const renderList = () => {
     return (
       <main>
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Cari Design"
-          value={nama}
-          onChange={(e) => setName(e.target.value)}
-            />
-            <div className="item-container1">
-                {data.map((item, index) => {
-                    return (
-                        <div key={index}>
-                            <NavLink to={`/Cardsdetails/${item.id}`}>
-                                <img className="imgsearch" src={item.image}/>
-                                <div className="search-name">
-                                  <p>{item.nama}</p>
-                                </div>
-                            </NavLink>
-                        </div>
-                    );
+        <div class="searchin">
+          <img id="search" src="./searchlogo.png"/> 
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Cari Design"
+            value={nama}
+            onChange={(e) => setName(e.target.value)}/>
+          </div>
+          <div className="item-container1">
+            {data.map((item, index) => {
+                return (
+                    <div key={index}>
+                        <NavLink to={`/Cardsdetails/${item.id}`}>
+                            <div class="showsearch">
+                              <img className="imgsearch" src={item.image}/>
+                              <div className="search-name">
+                                <p>{item.nama}</p>
+                              </div>
+                            </div>  
+                        </NavLink>
+                    </div>
+                );
           })}
         </div>
       </main>
@@ -64,7 +68,6 @@ const Search = () => {
   return (
     <div className="search-container">
       {renderError()}
-      <img id="search" src="./searchlogo.png"/>
       {isLoading ? (
         <div className="search-loading">Loading...</div>
       ) : (

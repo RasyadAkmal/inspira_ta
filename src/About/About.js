@@ -15,21 +15,21 @@ class About extends React.Component{
                     <div className="line"></div>
                     <div className="location">
                         <p className="info">
-                            <HiOutlineLocationMarker className = "icon" size="18px" color="#484d49" />
+                            <HiOutlineLocationMarker className = "about-icon" size="18px" color="#484d49" />
                             Location
                         </p>
                         <p>Jakarta Utara</p>
                     </div>
                     <div className="location">
                         <p className="info">
-                            <AiOutlinePhone className = "icon" size="18px" color="#484d49" />
+                            <AiOutlinePhone className = "about-icon" size="18px" color="#484d49" />
                            Number 
                         </p>
                         <p>+6282299416186</p>
                     </div>
                     <div className="location">
                         <p className="info">
-                            <FiMail className = "icon" size="18px" color="#484d49" />
+                            <FiMail className = "about-icon" size="18px" color="#484d49" />
                             Email
                         </p>
                         <p>akmal@gmail.com</p>

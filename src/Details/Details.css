@@ -43,7 +43,10 @@
 @media screen and (max-width: 620px) {
     .detail-item{
         font-size: 12px;
-        width: 220px;
+        width: 120px;
+    }
+    .detail-item h3 {
+        font-size: 18px;
     }
   }
   

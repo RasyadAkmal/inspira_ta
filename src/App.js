@@ -2,7 +2,6 @@ import { Route, Routes, NavLink, Navigate } from "react-router-dom";
 import React from 'react';
 import './App.css';
 import './About/About';
-import './Profile/Profile';
 import { AiFillRead, AiOutlineHome } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { BsSearch } from "react-icons/bs";

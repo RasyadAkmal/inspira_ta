@@ -13,8 +13,8 @@
     height: 450px;
     align-items: center;
     margin-top: 10px;
-    margin-bottom: 45px;
-    background: url('https://d3p0bla3numw14.cloudfront.net/news-content/img/2020/10/02093422/gambar-rumah-minimalis-14.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.593), rgba(100, 100, 0, 0)),
+    url('https://d3p0bla3numw14.cloudfront.net/news-content/img/2020/10/02093422/gambar-rumah-minimalis-14.jpg') 0 0;
 }
 .containerhome{
     width: 50%;
@@ -37,10 +37,9 @@
     width: 100px;
     border-radius: 10px;
     margin-top: 15px;
-    border-width: 2px;
-    border-color: #000000;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
+    border-color: #850000;
 }
 .buttonhome:hover{
     color: #000000;

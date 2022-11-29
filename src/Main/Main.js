@@ -34,19 +34,18 @@ function Main(props) {
   const renderList = () => {
     return (
       <div className="item-container">
-        {data.map((item, index) => {
+        {data.map((item) => {
           return (
-            <div class="box" key={index}>
+            <div class="box" key={item.id}>
               <NavLink
                 to={`/Cardsdetails/${item.id}`}
                 onClick={() =>
                   history.push(`/Cardsdetails/${item.id}`)
                 }
               >
-                <img class="img-list" src={item.image} alt="" />
-                <p class="nama">{item.nama}</p>
-                <p class="maker">{item.maker}</p>
+              <img class="img-list" src={item.image} alt="" />
               </NavLink>
+              <h2>{item.nama}</h2>
             </div>
           );
         })}
