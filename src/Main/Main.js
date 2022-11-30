@@ -3,6 +3,8 @@ import "./Main.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {Navbar} from "../Components/Navbar/Navbar.js";
+import {Hero} from "../Components/Hero/Hero.js";
+import {Card} from "../Components/Card/Card.js";
 
 function Main(props) {
   const [data, setData] = useState([]);
@@ -37,17 +39,7 @@ function Main(props) {
       <div className="item-container">
         {data.map((item) => {
           return (
-            <div class="box" key={item.id}>
-              <NavLink
-                to={`/Cardsdetails/${item.id}`}
-                onClick={() =>
-                  history.push(`/Cardsdetails/${item.id}`)
-                }
-              >
-              <img class="img-list" src={item.image} alt="" />
-              </NavLink>
-              <h2>{item.nama}</h2>
-            </div>
+            <Card key={item.id} id={item.id} image={item.image} nama={item.nama}/>
           );
         })}
       </div>
@@ -70,6 +62,10 @@ function Main(props) {
   return (
     <div>
       <Navbar pages="MAIN"></Navbar>
+      <Hero
+        title="Referensi"
+        caption="Berikut ini adalah beberapa referensi pilihan"
+      />
       <div className="render-container">
         {renderError()}
         {isLoading ? (

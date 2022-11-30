@@ -3,6 +3,8 @@ import axios from "axios";
 import "./Search.css"
 import { NavLink } from "react-router-dom";
 import {Navbar} from "../Components/Navbar/Navbar.js";
+import {Hero} from "../Components/Hero/Hero.js";
+import {Card} from "../Components/Card/Card.js";
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -37,16 +39,7 @@ const Search = () => {
           <div className="item-container1">
             {data.map((item, index) => {
                 return (
-                    <div key={index}>
-                        <NavLink to={`/Cardsdetails/${item.id}`}>
-                            <div class="showsearch">
-                              <img className="imgsearch" src={item.image}/>
-                              <div className="search-name">
-                                <p>{item.nama}</p>
-                              </div>
-                            </div>  
-                        </NavLink>
-                    </div>
+                  <Card key={item.id} id={item.id} image={item.image} nama={item.nama}/>
                 );
           })}
         </div>
@@ -69,6 +62,10 @@ const Search = () => {
   return (
     <div>
       <Navbar pages="SEARCH"/>
+      <Hero
+        title="Cari Referensi"
+        caption="Silahkan cari referensi berdasarkan kata kunci"
+      />
       <div className="search-container">
         {renderError()}
         {isLoading ? (
