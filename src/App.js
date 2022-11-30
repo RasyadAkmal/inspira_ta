@@ -13,10 +13,6 @@ import Search from "./Search/Search";
 function App() {
   return (
     <>
-      <header>
-        <img src="/inspira.png" alt="logo"/>
-        <p id="titleGroup">INSPIRA</p>
-      </header>
       <div className="content">
         <Routes>
           <Route path="/" element={<Navigate replace to="/Home" />} />

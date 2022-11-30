@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Main.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import {Navbar} from "../Components/Navbar/Navbar.js";
 
 function Main(props) {
   const [data, setData] = useState([]);
@@ -67,13 +68,16 @@ function Main(props) {
   };
 
   return (
-    <div className="render-container">
-      {renderError()}
-      {isLoading ? (
-        <div className="loading-state">Loading...</div>
-      ) : (
-        <div className="render">{renderList()}</div>
-      )}
+    <div>
+      <Navbar pages="MAIN"></Navbar>
+      <div className="render-container">
+        {renderError()}
+        {isLoading ? (
+          <div className="loading-state">Loading...</div>
+        ) : (
+          <div className="render">{renderList()}</div>
+        )}
+      </div>
     </div>
   );
 }

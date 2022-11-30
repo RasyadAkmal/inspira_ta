@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Search.css"
 import { NavLink } from "react-router-dom";
+import {Navbar} from "../Components/Navbar/Navbar.js";
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -66,13 +67,16 @@ const Search = () => {
   };
 
   return (
-    <div className="search-container">
-      {renderError()}
-      {isLoading ? (
-        <div className="search-loading">Loading...</div>
-      ) : (
-        <div className="search-result">{renderList()}</div>
-      )}
+    <div>
+      <Navbar pages="SEARCH"/>
+      <div className="search-container">
+        {renderError()}
+        {isLoading ? (
+          <div className="search-loading">Loading...</div>
+        ) : (
+          <div className="search-result">{renderList()}</div>
+        )}
+      </div>
     </div>
   );
 };
