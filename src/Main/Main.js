@@ -12,26 +12,26 @@ function Main(props) {
   const [isError, setIsError] = useState(false);
   const { history } = props;
 
+  const fetchData = async () => {
+    setIsError(false);
+    setIsLoading(true);
+
+    try {
+      const results = await axios(
+        "https://63669e6ff5f549f052c9e8a9.mockapi.io/api/v1/profile"
+      );
+      setData(results.data)
+    } catch (err) {
+      setIsError(true);
+      setTimeout(() => setIsError(false), 4000);
+    }
+    setIsLoading(false);
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
-
-      try {
-        const results = await axios(
-          "https://my-json-server.typicode.com/rasyadakmal/InspiraApp/db"
-        );
-        setData(results.data.desain)
-      } catch (err) {
-        setIsError(true);
-        setTimeout(() => setIsError(false), 4000);
-      }
-      setIsLoading(false);
-    };
-
     fetchData();
   }, []);
 
+  
   console.log(data);
 
   const renderList = () => {
@@ -39,7 +39,7 @@ function Main(props) {
       <div className="item-container">
         {data.map((item) => {
           return (
-            <Card key={item.id} id={item.id} image={item.image} nama={item.nama}/>
+            <Card key={item.id} id={item.id} image={item.image} nama={item.nama} fetchedData={fetchData}/>
           );
         })}
       </div>

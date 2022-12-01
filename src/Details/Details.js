@@ -16,9 +16,9 @@ export default function Details() {
         const fetchData = async () => {
             try {
                 const results = await axios(
-                    "https://my-json-server.typicode.com/rasyadakmal/InspiraApp/db"
+                    "https://63669e6ff5f549f052c9e8a9.mockapi.io/api/v1/profile"
                 );
-                setData(results.data.desain[id-1])
+                setData(results.data[id-1])
             } catch (err) {
             
             }  

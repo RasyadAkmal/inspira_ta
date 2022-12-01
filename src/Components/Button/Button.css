@@ -4,4 +4,8 @@ button {
     color: #ffffff;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #743939;
 }

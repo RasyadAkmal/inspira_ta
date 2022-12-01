@@ -1,7 +1,7 @@
 import "./Button.css";
 
-export function Button({buttonText}){
+export function Button({buttonText, onClick}){
     return(
-        <button>{buttonText}</button>
+        <button onClick={onClick}>{buttonText}</button>
     )
 }

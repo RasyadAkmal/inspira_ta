@@ -12,17 +12,16 @@ const Search = () => {
   const [isLoading] = useState(false);
   const [isError] = useState(false);
 
+  const doSearch = (e) => {
+    axios
+      .get("https://63669e6ff5f549f052c9e8a9.mockapi.io/api/v1/profile?nama=" + nama)
+      .then((results) => {
+        setData(results.data);
+      });
+  };
   useEffect(() => {
-    const doSearch = (e) => {
-      axios
-        .get("https://my-json-server.typicode.com/rasyadakmal/InspiraApp/desain?nama=" + nama)
-        .then((results) => {
-          setData(results.data);
-        });
-    };
     doSearch();
   }, [nama]);
-  console.log(data);
 
   const renderList = () => {
     return (
@@ -39,7 +38,7 @@ const Search = () => {
           <div className="item-container1">
             {data.map((item, index) => {
                 return (
-                  <Card key={item.id} id={item.id} image={item.image} nama={item.nama}/>
+                  <Card key={item.id} id={item.id} image={item.image} nama={item.nama} fetchedData={doSearch}/>
                 );
           })}
         </div>
