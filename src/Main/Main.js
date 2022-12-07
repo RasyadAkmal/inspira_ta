@@ -19,7 +19,7 @@ function Main(props) {
     try {
       const results = await axios(
         "https://63669e6ff5f549f052c9e8a9.mockapi.io/api/v1/profile"
-      );
+      ); //Mengambil data melalui API menggunakan axios
       setData(results.data)
     } catch (err) {
       setIsError(true);
@@ -37,7 +37,7 @@ function Main(props) {
   const renderList = () => {
     return (
       <div className="item-container">
-        {data.map((item) => {
+        {data.map((item) => { //Melakukan fungsi mapping untuk tampil pada component card
           return (
             <Card key={item.id} id={item.id} image={item.image} nama={item.nama} fetchedData={fetchData}/>
           );
