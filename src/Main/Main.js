@@ -46,7 +46,18 @@ function Main(props) {
     );
   };
 
-//
+  const renderError = () => {
+    if (isError) {
+      return (
+        <div
+          className="alert alert-warning alert-dismissible fade show"
+          role="alert"
+        >
+          Unable to Get data, Please try again next time
+        </div>
+      );
+    }
+  };
 
   return (
     <div>
