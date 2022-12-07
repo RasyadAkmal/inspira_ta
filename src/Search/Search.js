@@ -14,7 +14,7 @@ const Search = () => {
 
   const doSearch = (e) => {
     axios
-      .get("https://63669e6ff5f549f052c9e8a9.mockapi.io/api/v1/profile?nama=" + nama)
+      .get("https://63669e6ff5f549f052c9e8a9.mockapi.io/api/v1/profile?nama=" + nama) //Method GET pada API untuk melakukan search data
       .then((results) => {
         setData(results.data);
       });
